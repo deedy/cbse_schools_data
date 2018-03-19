@@ -21,7 +21,7 @@ The scraping, parsing and cleaning code is not in this repository.
  
 ## Short Documentation
 
-For full documentation, see `README_DATA_DETAILS`.
+There are 24 total fields per school. For full documentation, see `README_DATA_DETAILS`. 
 
  - `required string name` School name in upper case
  - `required int32 aff_no` Affiliation number, unique
