@@ -1,5 +1,6 @@
 from collections import namedtuple
 import pickle
+import time
 
 # http://cbseaff.nic.in/cbse_aff/schdir_Report/AppViewdir.aspx?affno=1930772
 CbseSchoolFields = [
@@ -32,5 +33,8 @@ CbseSchool = namedtuple('CbseSchool', CbseSchoolFields)
 
 
 RES_FILE_P = 'schools.p'
+print('Reading {0}...'.format(RES_FILE_P))
+start = time.time()
 with open(RES_FILE_P, 'rb') as f:
-  pickle.load(f)
+  data = pickle.load(f)
+print('Loaded {0} rows in {1:0.2f} seconds.'.format(len(data), time.time() - start))
