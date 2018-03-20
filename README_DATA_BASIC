@@ -1,5 +1,5 @@
 # This is the documentation for the BASIC version of the CBSE 2018 Schools data. 
-# The BASIC data has 24 fields documented below.
+# The BASIC data has 24 fields documented below for 20,367 schools.
 
 # Go to the URL http://cbseaff.nic.in/cbse_aff/schdir_Report/AppViewdir.aspx?affno=<aff_no>
 # to find the raw data for a given affiliation number.

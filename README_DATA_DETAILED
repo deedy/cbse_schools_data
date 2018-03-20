@@ -1,5 +1,5 @@
 # This is the documentation for the DETAILED version of the CBSE 2018 Schools data. 
-# The DETAILED data has the initial 24 fields of the BASIC data as well as 119 additional fields (from 7 subcategories). 
+# The DETAILED data has the initial 24 fields of the BASIC data as well as 119 additional fields (from 7 subcategories) for 20,367 schools.
 
 # Go to the URL http://cbseaff.nic.in/cbse_aff/schdir_Report/AppViewdir.aspx?affno=<aff_no>
 # to find the raw data for a given affiliation number.

@@ -2,7 +2,7 @@ from collections import namedtuple
 import pickle
 import time
 
-# http://cbseaff.nic.in/cbse_aff/schdir_Report/AppViewdir.aspx?affno=1930772
+# http://cbseaff.nic.in/cbse_aff/schdir_Report/AppViewdir.aspx?affno=2730017
 CbseSchoolFields = [
         'name', # Name of institution
         'aff_no', # Affiliation number
