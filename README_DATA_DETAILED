@@ -1,0 +1,678 @@
+# This is the documentation for the DETAILED version of the CBSE 2018 Schools data. 
+# The DETAILED data has the initial 24 fields of the BASIC data as well as 119 additional fields (from 7 subcategories). 
+
+# Go to the URL http://cbseaff.nic.in/cbse_aff/schdir_Report/AppViewdir.aspx?affno=<aff_no>
+# to find the raw data for a given affiliation number.
+
+
+CbseSchoolDetailed extends CbseSchoolBasic {
+  #############################
+  ## School Location Details ##
+  #############################
+
+  # Name of the Nearest Railway Station
+  # Uppercase string, cleaned of '-', 'NIL', numbers, and other spammy variants.
+  # (missing 9176/20367 - 45%)
+  optional string l_nearest_railway;
+
+  # Distance to the Nearest Railway Station (in km)
+  # Minimum is 0, maximum is 1000.
+  # (missing 8984/20367 - 44%)
+  optional float l_nearest_railway_dist;
+
+  # Name of the Nearest Police Station
+  # Uppercase string, cleaned of '-', 'NIL', numbers, and other spammy variants.
+  # (missing 9176/20367 - 45%)
+  optional string l_nearest_police;
+
+  # Distance to the Nearest Police Station (in km)
+  # Minimum is 0, maximum is 1000.
+  # (missing 8977/20367 - 44%)
+  optional float l_nearest_police_dist;
+
+  # Name of the Nearest Nationalized Bank
+  # Uppercase string, cleaned of '-', 'NIL', numbers, and other spammy variants.
+  # (missing 9148/20367 - 45%)
+  optional string l_nearest_bank;
+
+  # Distance to the Nearest Nationalized Bank (in km)
+  # Minimum is 0, maximum is 1000.
+  # (missing 8976/20367 - 44%)
+  optional float l_nearest_bank_dist;
+
+
+  #############################
+  ## School Nature Details   ##
+  #############################
+
+  # Category of the school
+  # The gender of the students of the school.
+  # e.g. Co-ed, Boys, Girls
+  # (missing 589/20367 - 3%)
+  optional Category n_category;
+  enum Category {
+    'Co-educational', # count: 18289
+    'Boys', # count: 698
+    'Girls' # count: 791
+  }
+
+  # Medium of instruction
+  # Language that the school is taught in.
+  # (missing 786/20367 - 4%)
+  optional Medium n_medium;
+  enum Medium {
+    'English', # count: 18922
+    'Hindi' # count: 659
+  }
+
+  # Type of the school, ownership-wise
+  # (missing 243/20367 - 1%)
+  optional Type n_school_type;
+  enum Type {
+    # Independent school
+    'Independent', # count: 15771
+    # Government school
+    'Govt', # count: 1829
+    # School belongs to the "Kendriya Vidyalaya Sangathan" group
+    'KVS', # count: 1093
+    # School belongs to the "Jawahar Navodaya Vidyalayas" group
+    'JNV', # count: 590
+    # Government aided school
+    'Govt Aided', # count: 827
+    # Aided by other sources/ Central Tibetan Schools Administration (CTSA) 
+    'Aided From Other Source/CTSA' # count: 14
+  }
+
+
+  #################################
+  ## School Enrollment Details   ##
+  #################################
+
+  # Nursery/Kindergarten/Lower Kindergarten Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 10064, 9847 / 20367 - 49, 48%)
+  optional int e_nursery_sections;
+  optional int e_nursery_students;
+
+  # Class I - V (Elementary School) Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 14280, 13487 / 20367 - 70, 66%)
+  optional int e_i_v_sections;
+  optional int e_i_v_students;
+
+  # Class VI - VII (Elementary School) Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 13632, 13426 / 20367 - 66, 65%)
+  optional int e_vi_viii_sections;
+  optional int e_vi_viii_students;
+
+  # Class IX - X (Secondary School) Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 13471, 13414 / 20367 - 66, 65%)
+  optional int e_ix_x_sections;
+  optional int e_ix_x_students;
+
+  # Class XI - XII (Senior Secondary School) Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 13485, 13416 / 20367 - 66, 65%)
+  optional int e_xi_xii_sections;
+  optional int e_xi_xii_students;
+
+  # Class I Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16809, 16797 / 20367 - 82%)
+  optional int e_i_sections;
+  optional int e_i_students;
+
+  # Class II Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16809, 16797 / 20367 - 82%)
+  optional int e_ii_sections;
+  optional int e_ii_students;
+
+  # Class III Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16808, 16797 / 20367 - 82%)
+  optional int e_iii_sections;
+  optional int e_iii_students;
+
+  # Class IV Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16808, 16797 / 20367 - 82%)
+  optional int e_iv_sections;
+  optional int e_iv_students;
+
+  # Class V Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16808, 16797 / 20367 - 82%)
+  optional int e_v_sections;
+  optional int e_v_students;
+
+  # Class VI Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16808, 16797 / 20367 - 82%)
+  optional int e_vi_sections;
+  optional int e_vi_students;
+
+  # Class VII Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16809, 16797 / 20367 - 82%)
+  optional int e_vii_sections;
+  optional int e_vii_students;
+
+  # Class VIII Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16807, 16797 / 20367 - 82%)
+  optional int e_viii_sections;
+  optional int e_viii_students;
+
+  # Class IX Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16800, 16797 / 20367 - 82%)
+  optional int e_ix_sections;
+  optional int e_ix_students;
+
+  # Class X Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16800, 16797 / 20367 - 82%)
+  optional int e_x_sections;
+  optional int e_x_students;
+
+  # Class XI Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16798, 16797 / 20367 - 82%)
+  optional int e_xi_sections;
+  optional int e_xi_students;
+
+  # Class XII Number of sections and students
+  # Minimum for sections is 0, maximum 10. Minimum for students is 0, maximum 1000.
+  # (missing 16799, 16797 / 20367 - 82%)
+  optional int e_xii_sections;
+  optional int e_xii_students;
+
+
+  #####################################
+  ## School Infrastructure Details   ##
+  #####################################
+
+  # Clasrooms (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10049, 10065, 10060/200367 - 49%)
+  optional int i_classrooms_no;
+  optional float i_classrooms_length;
+  optional float i_classrooms_breadth;
+
+  # Composite Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10029, 10043, 10040/200367 - 49%)
+  optional int i_composite_lab_no;
+  optional float i_composite_lab_length;
+  optional float i_composite_lab_breadth;
+
+  # Physics Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10029, 10038, 10036/200367 - 49%)
+  optional int i_phy_lab_no;
+  optional float i_phy_lab_length;
+  optional float i_phy_lab_breadth;
+
+  # Chemistry Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10029, 10038, 10037/200367 - 49%)
+  optional int i_chem_lab_no;
+  optional float i_chem_lab_length;
+  optional float i_chem_lab_breadth;
+
+  # Biology Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10029, 10040, 10038/200367 - 49%)
+  optional int i_bio_lab_no;
+  optional float i_bio_lab_length;
+  optional float i_bio_lab_breadth;
+
+  # Biotechnology Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 16803, 16804, 16804/200367 - 82%)
+  optional int i_biotech_lab_no;
+  optional float i_biotech_lab_length;
+  optional float i_biotech_lab_breadth;
+
+  # Mathematics Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10030, 10039, 10039/200367 - 49%)
+  optional int i_math_lab_no;
+  optional float i_math_lab_length;
+  optional float i_math_lab_breadth;
+
+  # Computer Science Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10030, 10045, 10042/200367 - 49%)
+  optional int i_cs_lab_no;
+  optional float i_cs_lab_length;
+  optional float i_cs_lab_breadth;
+
+  # Home Science Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10030, 10033, 10030/200367 - 49%)
+  optional int i_home_lab_no;
+  optional float i_home_lab_length;
+  optional float i_home_lab_breadth;
+
+  # Libraries (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10029, 10050, 10047/200367 - 49%
+  optional int i_library_no;
+  optional float i_library_length;
+  optional float i_library_breadth;
+
+  # Other Labs (number, avg length in m, avg breadth in m)
+  # Minimum classroom number is 0, maximum 100.
+  # Minimum classroom length is 0, maximum 500m.
+  # Minimum classroom breadth is 0, maximum 500m.
+  # (missing 10033, 10059, 10055/200367 - 49%
+  optional int i_other_lab_no;
+  optional float i_other_lab_length;
+  optional float i_other_lab_breadth;
+
+
+  ###############################
+  ## School Teachers Details   ##
+  ###############################
+
+  # NTTs: Nursery Teacher Training (number, number trained, number untrained)
+  # Minimum for each of these fields is 0 and maximum 500.
+  # (missing 10097/20367 - 49%)
+  optional int t_ntts_no;
+  optional int t_ntts_trained;
+  optional int t_ntts_untrained;
+
+  # PRTs: PRimary Teacher (1-5th, diploma in education) (number, number trained, number untrained)
+  # Minimum for each of these fields is 0 and maximum 500.
+  # (missing 10097/20367 - 49%)
+  optional int t_prts_no;
+  optional int t_prts_trained;
+  optional int t_prts_untrained;
+
+  # TGTs: Trained Graduate Teacher (6-10th, grad in subject, B.Ed) (number, number trained, number untrained)
+  # Minimum for each of these fields is 0 and maximum 500.
+  # (missing 10097/20367 - 49%)
+  optional int t_tgts_no;
+  optional int t_tgts_trained;
+  optional int t_tgts_untrained;
+
+  # Librarian (number, number trained, number untrained)
+  # Minimum for each of these fields is 0 and maximum 500.
+  # (missing 10097/20367 - 49%)
+  optional int t_librarians_no;
+  optional int t_librarians_trained;
+  optional int t_librarians_untrained;
+
+  # PTIs: Physical Training Instructor (number, number trained, number untrained)
+  # Minimum for each of these fields is 0 and maximum 500.
+  # (missing 10097/20367 - 49%)
+  optional int t_ptis_no;
+  optional int t_ptis_trained;
+  optional int t_ptis_untrained;
+
+  # PGTs: Post Graduate Teacher (11-12th, post grad in subject, B.Ed) (number, number trained, number untrained)
+  # Minimum for each of these fields is 0 and maximum 500.
+  # (missing 10097/20367 - 49%)
+  optional int t_pgts_no;
+  optional int t_pgts_trained;
+  optional int t_pgts_untrained;
+
+  # Executive (Vice Principal/Supervisor/Head Master/Head Mistress) Teacher (number, number trained, number untrained)
+  # Minimum for each of these fields is 0 and maximum 500.
+  # (missing 10100/20367 - 49%)
+  optional int t_exec_no;
+  optional int t_exec_trained;
+  optional int t_exec_untrained;
+
+  ##############################################
+  ## School Physical Infrastructure Details   ##
+  ##############################################
+
+  ##### Physical Size #####
+
+  # Area of the school (in m^2)
+  # Minumum is 0 and maximum 4*10^7
+  # (missing 9973/20367 - 48%)
+  optional float p_area_meter;
+
+  # Area of the school (in acres)
+  # Minumum is 0 and maximum 10,000.
+  # (missing 9973/20367 - 48%)
+  optional float p_area_acre;
+
+  # Built-up area of the school (m^2)
+  # Minumum is 0 and maximum 10^7
+  # (missing 9965/20367 - 48%)
+  optional float p_area_builtup_meter;
+
+  # Number of sites this school has
+  # (missing 9958/20367 - 48%)
+  optional Sites p_num_sites;
+  enum Sites {
+    'ONE', # count: 9775
+    'TWO', # count: 634
+  }
+
+  # Area of the playground (in m^2)
+  # Minumum is 0 and maximum 4*10^7
+  # (missing 9961/20367 - 48%)
+  optional float p_area_playground;
+
+  ##### Sanitary Conditions #####
+
+  # The type of urinals
+  # (missing 9571/20367 - 46%)
+  optional UrinalType p_urinal_type;
+  enum UrinalType {
+    'flush', # count: 10122
+    'dry', # count: 674
+  }
+
+  # Number of boys urinals
+  # Minumum is 0 and maximum 500.
+  # (missing 9586/20367 - 47%)
+  optional int p_boys_urinal;
+
+  # Number of girls urinals 
+  # Minumum is 0 and maximum 500.
+  # (missing 9586/20367 - 47%)
+  optional int p_girls_urinal;
+
+  # Potable Water: Whether or not (yes/no) it exists
+  # (missing 9569/20367 - 46%)
+  optional bool p_potable_water;
+
+  # Official Health and Sanitary certificate: whether or not (yes/no) one exists
+  # Has Certificate about health and sanitary conditions, drinking water and
+  # fire safety of the school has been obtained from the competent authorities of the area?
+  # (missing 9569/20367 - 46%)
+  optional bool p_health_cert;
+
+
+  #################################
+  ## School Facilities Details   ##
+  #################################
+
+  ##### Library Facilities #####
+
+  # Total books in the library
+  # Minumum is 0 and maximum 100,000.
+  # (missing 9798/20367 - 48%)
+  optional int f_total_books;
+
+  # Periodicals: number in the library
+  # Minumum is 0 and maximum 25,000.
+  # (missing 9795/20367 - 48%)
+  optional int f_periodicals;
+
+  # Dailies: number in the library
+  # Minumum is 0 and maximum 10,000.
+  # (missing 9796/20367 - 48%)
+  optional int f_dailies;
+
+  # Reference books: number in the library
+  # Minumum is 0 and maximum 40,000.
+  # (missing 9794/20367 - 48%)
+  optional int f_reference_books;
+
+  # Magzines: number in the library
+  # Minumum is 0 and maximum 10,000.
+  # (missing 9795/20367 - 48%)
+  optional int f_magazine;
+
+
+  ##### Sports and Games #####
+
+  # Swimming pool: whether or not (yes/no) one exists
+  # (missing 9793/20367 - 48%)
+  optional bool f_swimming_pool;
+
+  # Indoor games: whether or not (yes/no) they exist
+  # (missing 9793/20367 - 48%)
+  optional bool f_indoor_games;
+
+  # Dance rooms: whether or not (yes/no) one exists
+  # (missing 9793/20367 - 48%)
+  optional bool f_dance_rooms;
+
+  # Gym: whether or not (yes/no) one exists
+  # (missing 9793/20367 - 48%)
+  optional bool f_gym;
+
+  # Music Rooms: whether or not (yes/no) one exists
+  # (missing 9793/20367 - 48%)
+  optional bool f_music_rooms;
+
+  # Hostels: whether or not (yes/no) one exists
+  # (missing 9793/20367 - 48%)
+  optional bool f_hostel;
+
+  # Health and Medical Checkup: whether or not (yes/no) this amenity exists in the school
+  # (missing 9793/20367 - 48%)
+  optional bool f_health_checkup;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CbseSchoolBasic {
+  # School name
+  # The name of the school in capital letters.
+  required string name; 
+
+  # Affiliation number
+  # A usually 7 digit (70%) but occasionally 6 (30%) and 5 digit (2 instances) number.
+  # This is a unique number for each school.
+  required int aff_no;
+  
+  # Indian State/Union Territory or "Foreign Schools"
+  # The name of the state or the string "Foreign Schools" if not from India.
+  required State state;
+
+  # Indian District (or Country if state == FOREIGN SCHOOlS)
+  # FOREIGN SCHOOlS can be one of 25 countries.
+  # Documentation is in README_DISTRICTS
+  # (missing 2903/20367 - 14%)
+  optional District district;
+
+  # Postal Address
+  # The postal address of the school in all caps.
+  required string address;
+
+  # Pincode.
+  # The Indian pincode of the school, usually empty for foreign schools.
+  # (missing 642/20367 - 3%)
+  optional int pincode;
+
+  # Phone number with STD code.
+  # ';' separated phone-numbers. Cleaned to have no '-', ' '. Cannot contain letters.
+  # Empty/spammy values such as '-', '--', 'NA', 'XXX', '000' removed.
+  # (missing 9999/20367 - 50%)
+  optional string ph_no;
+
+  # Office Phone number
+  # ';' separated phone-numbers. Cleaned to have no '-', ' '. Cannot contain letters.
+  # Empty/spammy values such as '-', '--', 'NA', 'XXX', '000' removed.
+  # (missing 732/20367 - 4%)
+  optional string off_ph_no;
+
+  # Residential Phone number
+  # ';' separated phone-numbers. Cleaned to have no '-', ' '. Cannot contain letters.
+  # Empty/spammy values such as '-', '--', 'NA', 'XXX', '000' removed.
+  # (missing 10604/20367 - 53%)
+  optional string res_ph_no;
+
+  # Fax number
+  # Not guaranteed to be well formed or integral. Can contain '-'.
+  # Can be '-' or '-----' when not present.
+  # (missing 13754/20367 - 65%)
+  optional string fax_no;
+
+  # Email
+  # Email address of the school or principal.
+  # (missing 848/20367 - 4%)
+  optional string email;
+
+  # Website
+  # Website of the school.
+  # (missing 14228/20367 - 70%)
+  optional string website;
+
+  # Year Found
+  # A 4 digit integral year between 1800 and 2018, denoting when the school was founded.
+  # (missing 806/20367 - 4%)
+  optional int year_found;
+
+  # Date Opened
+  # The date this school was opened in the form "Sep 9, 2010", or format "%b %-d, %Y"
+  # (missing 1408/20367 - 7%)
+  optional Date date_opened;
+
+  # Principal Name
+  # The string name of the principal. 
+  # Cleaned to not have 'Mr' 'Mrs' 'Dr' etc prefixes. Normalized to have only one space between names. 
+  # Cleaned to not be equal to 'PRINCIPAL' or contain 'PRINCIPAL' in the name.
+  # (missing 389/20367 - 2%)
+  optional string princi_name;
+
+  # Sex
+  # The gender/sex of the school/principal. Can take the values '0', '1' or '2'.
+  # The meaning of these values is unclear. 
+  # (missing 2922/20367 - 14%)
+  optional Sex sex;
+
+  # Principal Qualifications
+  # The academic qualifications of the principal. 
+  # (missing 5143/20367 - 25%)
+  optional string princi_qual;  
+
+  # Principal Experience as an Administrator (in years)
+  # Integral value ranging from 0 to 60 years.
+  # (missing 5526/20367 - 27%)
+  optional int princi_exp_adm;
+
+  # Principal Experience as a Teacher (in years)
+  # Integral value ranging from 0 to 60 years.
+  # (missing 5509/20367 - 27%)
+  optional int princi_exp_teach;
+
+  # Status of the school
+  # Whether this school is a Middle, Secondary or Senior Secondary school.
+  required Status status;
+
+  # Affiliation Type of the school
+  # Whether this school is provisionally or permanently affiliated.
+  # Cleaned this field to change the spelling of 'Permanant' to 'Permanent'.
+  # (missing 343/20367 - 2%)
+  optional AffiliationType aff_type;
+
+  # Affiliation Start Date
+  # The date this school's affiliation began in the form "Sep 9, 2010", or format "%b %-d, %Y"
+  # (missing 21/20367 - 0.1%)
+  optional Date aff_start;
+
+  # Affiliation End Date
+  # The date this school's affiliation ended in the form "Sep 9, 2010", or format "%b %-d, %Y"
+  # (missing 21/20367 - 0.1%)
+  optional Date aff_end;
+
+  # Name of Trust, Society or Managing Committee
+  # Name of the overseeing company of this school.
+  # (missing 738/20367 - 4%)
+  optional string soc_name;
+
+  enum AffiliationType {
+    'Provisional', # count: 20004
+    'Permanent', # count: 20
+  }
+
+  enum Status {
+    'Middle Class', # count: 274
+    'Secondary School', # count: 6921
+    'Senior Secondary' # count: 13172
+  }
+
+  enum Sex {
+    '0', # count: 6423
+    '1', # count: 5829
+    '2', # count: 5193
+  }
+
+  enum State {
+    # Foreign Schools
+    'FOREIGN SCHOOLS', # count: 220,
+    # Indian States (29)
+    'ANDHRA PRADESH', # count: 306,
+    'ARUNACHAL PRADESH', # count: 310,
+    'ASSAM', # count: 262,
+    'BIHAR', # count: 831,
+    'CHATTISGARH', # count: 564,
+    'GOA', # count: 15,
+    'GUJARAT', # count: 425,
+    'HARYANA', # count: 1528,
+    'HIMACHAL PRADESH', # count: 263,
+    'JAMMU & KASHMIR', # count: 146,
+    'JHARKHAND', # count: 425,
+    'KARNATAKA', # count: 895,
+    'KERALA', # count: 1341,
+    'MADHYA PRADESH', # count: 1162,
+    'MAHARASHTRA', # count: 833,
+    'MANIPUR', # count: 71,
+    'MEGHALAYA', # count: 26,
+    'MIZORAM', # count: 14,
+    'NAGALAND', # count: 36,
+    'ODISHA', # count: 446,
+    'PUNJAB', # count: 1314,
+    'RAJASTHAN', # count: 1081,
+    'SIKKIM', # count: 222,
+    'TAMILNADU', # count: 830,
+    'TELANGANA', # count: 268,
+    'TRIPURA', # count: 54,
+    'UTTAR PRADESH', # count: 3138,
+    'UTTARAKHAND', # count: 588,
+    'WEST BENGAL', # count: 305
+    # Indian Union Territories (7)
+    'ANDAMAN & NICOBAR', # count: 119
+    'CHANDIGARH', # count: 163,
+    'DADAR & NAGAR HAVELI', # count: 10,
+    'DAMAN & DIU', # count: 5,
+    'DELHI', # count: 2112,
+    'LAKSHADWEEP', # count: 10,
+    'PUDUCHERRY', # count: 29,
+  }
+}
+
