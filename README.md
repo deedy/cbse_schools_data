@@ -4,7 +4,7 @@
 While CISCE is a private board, CBSE is public, central government run board.
 Every year, over **1 million** students take the CBSE Class XII (12) board examination as a high school leaving examination in India (and several schools abroad).
 
-As of 2018, there are **20,367** schools affiliated with the CBSE (out of which only 220 are outside India).
+As of **2018**, there are **20,367** schools affiliated with the CBSE (out of which only 220 are outside India).
 The details of each of these schools can be fetched from the [CBSE School Directory](http://cbseaff.nic.in/cbse_aff/schdir_Report/userview.aspx).
 [Here](http://cbseaff.nic.in/cbse_aff/schdir_Report/AppViewdir.aspx?affno=2730017) is an example URL endpoint of the school DPS RK Puram (aff_no = 2730017).
 You can replace the `affno` parameter with any Affiliation number to see the original raw data.
