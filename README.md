@@ -47,7 +47,7 @@ There are 24 total fields per school, a total of 488k data points. For full docu
  - `optional int32 year_found` Year that the school was founded (between 1800 and 2018)
  - `optional Date date_opened` Date that the school was opened (in form "Sep 9, 2010")
  - `optional string princi_name` Name of the principal, upper case
- - `optional Sex sex` Gender/sex of the school.
+ - `optional Sex sex` Gender/sex of the school/principal (unclear?).
  - `optional int32 princi_qual` Qualifications of the principal
  - `optional int32 princi_exp_adm` Number of years of administrative experience of the principal
  - `optional int32 princi_exp_teach` Number of years of teaching experience of the principal
