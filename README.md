@@ -39,6 +39,7 @@ There are 25 total fields per school, a total of ~510k data points. For full doc
  - `required int32 aff_no` Affiliation number, unique
  - `required State state` Indian State/Union Territory or "Foreign Schools"
  - `optional District district` Indian District (or Country if state == FOREIGN SCHOOlS)
+ - `required CbseRegion region` One of the 10 CBSE regions this school is in the jurisdiction of.
  - `required string address` Postal Address
  - `optional int32 pincode` Indian pincode
  - `optional string ph_no` Phone number (with STD Code). ';' Separated phone-numbers.
