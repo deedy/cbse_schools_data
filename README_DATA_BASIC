@@ -196,28 +196,38 @@ CbseSchoolBasic {
 
   enum CbseRegion {
     'AJMER', # count: 2678
+    # Region Code: 1
     # GUJARAT, MADHYA PRADESH, RAJASTHAN, DADAR & NAGAR HAVELI
     'ALLAHABAD', # count: 2053
     # UTTAR PRADESH (Eastern Districts)
+    # Region Code: 56
     # Mathura, Bareilly, Shahjahanpur, Kasganj/Kashi Ram Nagar, Etah, Hathras/Mahamaya Nagar, Aligarh,
     # Pilibhit, Agra
     'BHUBANESWAR', # count: 1315
+    # Region Code: 6
     # CHATTISGARH, ODISHA, WEST BENGAL
     'CHENNAI', # count: 3300
+    # Region Code: 46
     # ANDHRA PRADESH, GOA, KARNATAKA, MAHARASHTRA, TAMILNADU, TELANGANA, ANDAMAN & NICOBAR, DAMAN & DIU, PUDUCHERRY
     'DEHRADUN', # count: 2332
+    # Region Code: 58
     # UTTARAKHAND, UTTAR PRADESH (Western Districts)
     # Badaun, Baghpat, Bijnour, Bulandshahr, , GautamBudh Nagar(Noida), Ghaziabad, Hapur, J.P.Nagar/Amroha, Meerut,
     # Moradabad, Muzaffarnagar, Rampur, Saharanpur, Sambhal and Shamli
     'DELHI', # count: 2332
+    # Region Code: 9
     # DELHI, FOREIGN SCHOOLS
     'GUWAHATI', # count: 995
+    # Region Code: 3
     # ARUNACHAL PRADESH, ASSAM, MANIPUR, MEGHALAYA, MIZORAM, NAGALAND, SIKKIM, TRIPURA
     'PANCHKULA', # count: 3414
+    # Region Code: 2
     # HARYANA, HIMACHAL PRADESH, JAMMU & KASHMIR, PUNJAB, CHANDIGARH
     'PATNA', # count: 1256
+    # Region Code: 7
     # BIHAR, JHARKHAND
     'TRIVANDRUM', # count: 1351
+    # Region Code: 48
     # KERALA, LAKSHADWEEP
   }
 }
