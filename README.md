@@ -20,12 +20,12 @@ The scraping, parsing and cleaning code is not in this repository.
  - `README_DATA_BASIC` contains a protocol buffer like documentation for the **basic** data (in the `basic/` folder). Lists each of the fields, including which ones are required and optional, the degree to which the optional ones are present, as well as the type and enum definitions of each field.
  - `README_DATA_DETAILED` contains a protocol buffer like documentation for the **detailed** data (in the `detailed/` folder). Lists each of the fields, including which ones are required and optional, the degree to which the optional ones are present, as well as the type and enum definitions of each field.
  - `README_DISTRICTS` contains details of the district (alongwith state enums)
- - `basic/` The basic data containing the primary 24 fields.
+ - `basic/` The basic data containing the primary 25 fields.
    - `analyze_csv.py` reads the `csv` file in Python and prepares it for analysis.
    - `schools.csv` the csv file - 6.1MB.
    - `analyze_pickle.py` reads the `pickle` file in Python and prepares it for analysis.
    - `schools.p` the pickle file - 9.8MB.
- - `detailed/` The detailed data containing the primary 24 fields and the 119 detailed fields for a total of 143 fields.
+ - `detailed/` The detailed data containing the primary 25 fields and the 119 detailed fields for a total of 144 fields.
    - `analyze_csv.py` reads the `csv` file in Python and prepares it for analysis.
    - `schools_detailed.csv` the detailed csv file - 12MB.
    - `analyze_pickle.py` reads the `pickle` file in Python and prepares it for analysis.
@@ -33,7 +33,7 @@ The scraping, parsing and cleaning code is not in this repository.
  
 ## Short Documentation (Basic)
 
-There are 24 total fields per school, a total of 488k data points. For full documentation, see `README_DATA_BASIC`. 
+There are 25 total fields per school, a total of ~510k data points. For full documentation, see `README_DATA_BASIC`. 
 
  - `required string name` School name in upper case
  - `required int32 aff_no` Affiliation number, unique
@@ -62,7 +62,7 @@ There are 24 total fields per school, a total of 488k data points. For full docu
 
 ## Short Documentation (Detailed)
 
-There are 143 total fields per school - the 24 basic ones above, and 119 more, for a total of 2.9m data points.
+There are 144 total fields per school - the 25 basic ones above, and 119 more, for a total of ~3m data points.
 
  - **School Location Details** (6 fields)
    - `optional string l_nearest_railway` Name of nearest railway station

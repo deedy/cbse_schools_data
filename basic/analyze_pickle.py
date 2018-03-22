@@ -8,6 +8,7 @@ CbseSchoolFields = [
         'aff_no', # Affiliation number
         'state', # State
         'district', # District
+        'region', # CBSE Region
         'address', # Postal Address
         'pincode', # Pincode
         'ph_no', # Phone number with STD code

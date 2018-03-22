@@ -1,5 +1,5 @@
 # This is the documentation for the DETAILED version of the CBSE 2018 Schools data. 
-# The DETAILED data has the initial 24 fields of the BASIC data as well as 119 additional fields (from 7 subcategories) for 20,367 schools.
+# The DETAILED data has the initial 25 fields of the BASIC data as well as 119 additional fields (from 7 subcategories) for 20,367 schools.
 
 # Go to the URL http://cbseaff.nic.in/cbse_aff/schdir_Report/AppViewdir.aspx?affno=<aff_no>
 # to find the raw data for a given affiliation number.
@@ -509,6 +509,11 @@ CbseSchoolBasic {
   # (missing 2903/20367 - 14%)
   optional District district;
 
+  # CBSE Region
+  # The CBSE office this school is under the jurisdiction of.
+  # FOREIGN SCHOOLS falls under the DELHI jurisdiction.
+  requiered CbseRegion region;
+
   # Postal Address
   # The postal address of the school in all caps.
   required string address;
@@ -673,6 +678,33 @@ CbseSchoolBasic {
     'DELHI', # count: 2112,
     'LAKSHADWEEP', # count: 10,
     'PUDUCHERRY', # count: 29,
+  }
+
+  enum CbseRegion {
+    'AJMER', # count: 2678
+    # GUJARAT, MADHYA PRADESH, RAJASTHAN, DADAR & NAGAR HAVELI
+    'ALLAHABAD', # count: 2053
+    # UTTAR PRADESH (Eastern Districts)
+    # Mathura, Bareilly, Shahjahanpur, Kasganj/Kashi Ram Nagar, Etah, Hathras/Mahamaya Nagar, Aligarh,
+    # Pilibhit, Agra
+    'BHUBANESWAR', # count: 1315
+    # CHATTISGARH, ODISHA, WEST BENGAL
+    'CHENNAI', # count: 3300
+    # ANDHRA PRADESH, GOA, KARNATAKA, MAHARASHTRA, TAMILNADU, TELANGANA, ANDAMAN & NICOBAR, DAMAN & DIU, PUDUCHERRY
+    'DEHRADUN', # count: 2332
+    # UTTARAKHAND, UTTAR PRADESH (Western Districts)
+    # Badaun, Baghpat, Bijnour, Bulandshahr, , GautamBudh Nagar(Noida), Ghaziabad, Hapur, J.P.Nagar/Amroha, Meerut,
+    # Moradabad, Muzaffarnagar, Rampur, Saharanpur, Sambhal and Shamli
+    'DELHI', # count: 2332
+    # DELHI, FOREIGN SCHOOLS
+    'GUWAHATI', # count: 995
+    # ARUNACHAL PRADESH, ASSAM, MANIPUR, MEGHALAYA, MIZORAM, NAGALAND, SIKKIM, TRIPURA
+    'PANCHKULA', # count: 3414
+    # HARYANA, HIMACHAL PRADESH, JAMMU & KASHMIR, PUNJAB, CHANDIGARH
+    'PATNA', # count: 1256
+    # BIHAR, JHARKHAND
+    'TRIVANDRUM', # count: 1351
+    # KERALA, LAKSHADWEEP
   }
 }
 

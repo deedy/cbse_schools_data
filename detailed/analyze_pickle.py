@@ -8,6 +8,7 @@ CbseSchoolDetailedFields = [
         'aff_no', # Affiliation number
         'state', # State
         'district', # District
+        'region', # CBSE Region
         'address', # Postal Address
         'pincode', # Pincode
         'ph_no', # Phone number with STD code
@@ -155,7 +156,7 @@ CbseSchoolDetailedFields = [
         'f_hostel', # Is there a hostel (e.g. yes, no) 
         'f_health_checkup', # Is there a health and medical checkup room (e.g. yes, no) 
 ]
-CbseSchoolDetailed = namedtuple('CbseSchoolDetailed', CbseSchoolDetailedFields)
+CbseSchool = namedtuple('CbseSchoolDetailed', CbseSchoolDetailedFields)
 
 
 RES_FILE_P = 'schools_detailed.p'
